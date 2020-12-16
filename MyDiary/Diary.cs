@@ -16,6 +16,8 @@ namespace MyDiary
 {
     public partial class Diary : Form
     {
+        
+
         public Diary()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace MyDiary
         private void Namebox_TextChanged(object sender, EventArgs e)
         {
         }
-
+        public string a;
         private void Uploadbutton1_Click(object sender, EventArgs e)
         {
             string imageLocation;
@@ -36,6 +38,7 @@ namespace MyDiary
                 {
                     imageLocation = ofd.FileName;
                     pictureBox1.ImageLocation = imageLocation;
+                    a = imageLocation;
                 }
 
             }
@@ -74,15 +77,20 @@ namespace MyDiary
             }
             else
             {
-                MemoryStream ms = new MemoryStream();
-                pictureBox1.Image.Save(ms, ImageFormat.Png);
-                byte[] pic_arr = new byte[ms.Length];
-                ms.Position = 0;
-                ms.Read(pic_arr, 0, pic_arr.Length);
-
+                string b;
+                if(a!="")
+                {
+                    b = a;
+                }
+                else
+                {
+                    b = null;
+                }
+                DateTime time = DateTime.Now;
+                string ab = time.ToString("h:mm:ss tt");
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
                 connection.Open();
-                string sq2 = "INSERT INTO DiaryEvent(Event,Importance,Date,Diary,Picture) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ pic_arr + "')";
+                string sq2 = "INSERT INTO DiaryEvent(Event,Importance,Date,Diary,Picture,CreatedTime,ModiedTime) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ b.ToString() + "','"+ ab+ "','" + ab + "')";
                 
                 SqlCommand command = new SqlCommand(sq2, connection);
                 int diary = command.ExecuteNonQuery();

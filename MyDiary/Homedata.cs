@@ -8,7 +8,7 @@ namespace MyDiary
 {
     class Homedata
     {
-
+        
         public int Id { get; set; }
         public string Event { get; set; }
         public string Importance { get; set; }
@@ -19,6 +19,12 @@ namespace MyDiary
 
         public string Picture { get; set; }
 
-        
+        public string CreatedTime { get; set; }
+
+        public string ModfiedTime { get; set; }
+
+
+
+
     }
 }

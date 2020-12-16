@@ -57,7 +57,7 @@ namespace MyDiary
                     MessageBox.Show("Account Created");
                     Login lg = new Login();
                     lg.Show();
-                    this.Hide();
+                    this.Hide();  
 
                 }
                 else

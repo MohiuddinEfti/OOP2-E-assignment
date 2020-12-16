@@ -30,27 +30,31 @@ namespace MyDiary
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Namebox = new System.Windows.Forms.TextBox();
-            this.Eventlabel1 = new System.Windows.Forms.Label();
-            this.Datelabel1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Uploadbutton1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Datelabel1 = new System.Windows.Forms.Label();
+            this.Eventbox = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DiaryrichTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Homebutton1 = new System.Windows.Forms.Button();
             this.Savebutton1 = new System.Windows.Forms.Button();
             this.Logoutbutton1 = new System.Windows.Forms.Button();
+            this.ImportancecomboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NewEventlabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.NewEventlabel);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.ImportancecomboBox1);
             this.groupBox1.Controls.Add(this.Uploadbutton1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.Datelabel1);
-            this.groupBox1.Controls.Add(this.Eventlabel1);
-            this.groupBox1.Controls.Add(this.Namebox);
+            this.groupBox1.Controls.Add(this.Eventbox);
             this.groupBox1.Location = new System.Drawing.Point(86, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(227, 276);
@@ -58,40 +62,41 @@ namespace MyDiary
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Event";
             // 
-            // Namebox
+            // Uploadbutton1
             // 
-            this.Namebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Namebox.Location = new System.Drawing.Point(72, 66);
-            this.Namebox.Name = "Namebox";
-            this.Namebox.Size = new System.Drawing.Size(138, 26);
-            this.Namebox.TabIndex = 1;
-            this.Namebox.TextChanged += new System.EventHandler(this.Namebox_TextChanged);
+            this.Uploadbutton1.Location = new System.Drawing.Point(59, 220);
+            this.Uploadbutton1.Name = "Uploadbutton1";
+            this.Uploadbutton1.Size = new System.Drawing.Size(111, 23);
+            this.Uploadbutton1.TabIndex = 5;
+            this.Uploadbutton1.Text = "Upload Picture";
+            this.Uploadbutton1.UseVisualStyleBackColor = true;
+            this.Uploadbutton1.Click += new System.EventHandler(this.Uploadbutton1_Click);
             // 
-            // Eventlabel1
+            // dateTimePicker1
             // 
-            this.Eventlabel1.AutoSize = true;
-            this.Eventlabel1.Location = new System.Drawing.Point(27, 72);
-            this.Eventlabel1.Name = "Eventlabel1";
-            this.Eventlabel1.Size = new System.Drawing.Size(35, 13);
-            this.Eventlabel1.TabIndex = 2;
-            this.Eventlabel1.Text = "Event";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 138);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(138, 26);
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // Datelabel1
             // 
             this.Datelabel1.AutoSize = true;
-            this.Datelabel1.Location = new System.Drawing.Point(29, 121);
+            this.Datelabel1.Location = new System.Drawing.Point(27, 143);
             this.Datelabel1.Name = "Datelabel1";
             this.Datelabel1.Size = new System.Drawing.Size(30, 13);
             this.Datelabel1.TabIndex = 3;
             this.Datelabel1.Text = "Date";
             // 
-            // dateTimePicker1
+            // Eventbox
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(72, 116);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 26);
-            this.dateTimePicker1.TabIndex = 4;
+            this.Eventbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eventbox.Location = new System.Drawing.Point(72, 60);
+            this.Eventbox.Name = "Eventbox";
+            this.Eventbox.Size = new System.Drawing.Size(138, 26);
+            this.Eventbox.TabIndex = 1;
+            this.Eventbox.TextChanged += new System.EventHandler(this.Namebox_TextChanged);
             // 
             // pictureBox1
             // 
@@ -102,24 +107,16 @@ namespace MyDiary
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Uploadbutton1
+            // DiaryrichTextBox1
             // 
-            this.Uploadbutton1.Location = new System.Drawing.Point(59, 188);
-            this.Uploadbutton1.Name = "Uploadbutton1";
-            this.Uploadbutton1.Size = new System.Drawing.Size(111, 23);
-            this.Uploadbutton1.TabIndex = 5;
-            this.Uploadbutton1.Text = "Upload Picture";
-            this.Uploadbutton1.UseVisualStyleBackColor = true;
-            this.Uploadbutton1.Click += new System.EventHandler(this.Uploadbutton1_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(371, 57);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(681, 457);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.DiaryrichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiaryrichTextBox1.Location = new System.Drawing.Point(371, 57);
+            this.DiaryrichTextBox1.Name = "DiaryrichTextBox1";
+            this.DiaryrichTextBox1.Size = new System.Drawing.Size(681, 457);
+            this.DiaryrichTextBox1.TabIndex = 2;
+            this.DiaryrichTextBox1.Text = "";
             // 
             // Homebutton1
             // 
@@ -151,6 +148,39 @@ namespace MyDiary
             this.Logoutbutton1.UseVisualStyleBackColor = true;
             this.Logoutbutton1.Click += new System.EventHandler(this.Logoutbutton1_Click);
             // 
+            // ImportancecomboBox1
+            // 
+            this.ImportancecomboBox1.BackColor = System.Drawing.Color.White;
+            this.ImportancecomboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ImportancecomboBox1.FormattingEnabled = true;
+            this.ImportancecomboBox1.Items.AddRange(new object[] {
+            "High",
+            "Moderate",
+            "Less"});
+            this.ImportancecomboBox1.Location = new System.Drawing.Point(72, 100);
+            this.ImportancecomboBox1.Name = "ImportancecomboBox1";
+            this.ImportancecomboBox1.Size = new System.Drawing.Size(138, 28);
+            this.ImportancecomboBox1.TabIndex = 6;
+            this.ImportancecomboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Importance";
+            // 
+            // NewEventlabel
+            // 
+            this.NewEventlabel.AutoSize = true;
+            this.NewEventlabel.Location = new System.Drawing.Point(21, 67);
+            this.NewEventlabel.Name = "NewEventlabel";
+            this.NewEventlabel.Size = new System.Drawing.Size(35, 13);
+            this.NewEventlabel.TabIndex = 9;
+            this.NewEventlabel.Text = "Event";
+            // 
             // Diary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,7 +189,7 @@ namespace MyDiary
             this.Controls.Add(this.Logoutbutton1);
             this.Controls.Add(this.Savebutton1);
             this.Controls.Add(this.Homebutton1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.DiaryrichTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Diary";
@@ -176,15 +206,17 @@ namespace MyDiary
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox Namebox;
+        private System.Windows.Forms.TextBox Eventbox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label Datelabel1;
-        private System.Windows.Forms.Label Eventlabel1;
         private System.Windows.Forms.Button Uploadbutton1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox DiaryrichTextBox1;
         private System.Windows.Forms.Button Homebutton1;
         private System.Windows.Forms.Button Savebutton1;
         private System.Windows.Forms.Button Logoutbutton1;
+        private System.Windows.Forms.ComboBox ImportancecomboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label NewEventlabel;
     }
 }

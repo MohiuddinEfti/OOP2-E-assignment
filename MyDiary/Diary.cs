@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +23,6 @@ namespace MyDiary
 
         private void Namebox_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Uploadbutton1_Click(object sender, EventArgs e)
@@ -59,22 +62,43 @@ namespace MyDiary
             hm.Show();
             this.Hide();
         }
-
         private void Savebutton1_Click(object sender, EventArgs e)
         {
-            if(Namebox.Text=="")
+            if(Eventbox.Text=="")
             {
                 MessageBox.Show("ERROR Event Is Empty");
             }
-            else if(richTextBox1.Text == "")
+            else if(DiaryrichTextBox1.Text == "")
             {
                 MessageBox.Show("ERROR Diary Is Empty");
             }
             else
             {
-                MessageBox.Show("Diary Saved");
-                Namebox.Text = richTextBox1.Text = dateTimePicker1.Text = string.Empty;
+                MemoryStream ms = new MemoryStream();
+                pictureBox1.Image.Save(ms, ImageFormat.Png);
+                byte[] pic_arr = new byte[ms.Length];
+                ms.Position = 0;
+                ms.Read(pic_arr, 0, pic_arr.Length);
+
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
+                connection.Open();
+                string sq2 = "INSERT INTO DiaryEvent(Event,Importance,Date,Diary,Picture) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ pic_arr + "')";
+                
+                SqlCommand command = new SqlCommand(sq2, connection);
+                int diary = command.ExecuteNonQuery();
+                connection.Close();
+                if (diary > 0)
+                {
+                    MessageBox.Show("Diary Saved");
+                    Eventbox.Text = DiaryrichTextBox1.Text = dateTimePicker1.Text= ImportancecomboBox1.Text = string.Empty;
+                    pictureBox1 = null;
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             }
+            
         }
 
         private void Logoutbutton1_Click(object sender, EventArgs e)
@@ -90,6 +114,32 @@ namespace MyDiary
             {
                 this.Show();
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ImportancecomboBox1.Text== "High")
+            {
+                ImportancecomboBox1.BackColor = Color.Green;
+            }
+            else if(ImportancecomboBox1.Text== "Moderate")
+            {
+                ImportancecomboBox1.BackColor = Color.Yellow;
+            }
+            else if(ImportancecomboBox1.Text=="Less")
+            {
+                ImportancecomboBox1.BackColor = Color.Red;
+            }
+            else
+            {
+                ImportancecomboBox1.BackColor = Color.White;
+
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

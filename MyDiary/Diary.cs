@@ -26,19 +26,21 @@ namespace MyDiary
         private void Namebox_TextChanged(object sender, EventArgs e)
         {
         }
-        public string a;
+        public string abc;
         private void Uploadbutton1_Click(object sender, EventArgs e)
         {
-            string imageLocation;
+            string img;
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All files(*.*)|*.*";
                 if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    imageLocation = ofd.FileName;
-                    pictureBox1.ImageLocation = imageLocation;
-                    a = imageLocation;
+                    img = ofd.FileName;
+                    pictureBox1.ImageLocation = img;
+                    abc = img;
+                    
+                    
                 }
 
             }
@@ -77,29 +79,32 @@ namespace MyDiary
             }
             else
             {
-                string b;
-                if(a!="")
-                {
-                    b = a;
-                }
-                else
-                {
-                    b = null;
-                }
+                
                 DateTime time = DateTime.Now;
                 string ab = time.ToString("h:mm:ss tt");
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
                 connection.Open();
-                string sq2 = "INSERT INTO DiaryEvent(Event,Importance,Date,Diary,Picture,CreatedTime,ModiedTime) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ b.ToString() + "','"+ ab+ "','" + ab + "')";
-                
-                SqlCommand command = new SqlCommand(sq2, connection);
+                string sq1 = "INSERT INTO DiaryEvent(Event,Importance,Date,Diary,Picture,CreatedTime,ModfiedTime) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ abc + "','"+ ab+ "','" + ab + "')";
+                SqlCommand command = new SqlCommand(sq1, connection);
                 int diary = command.ExecuteNonQuery();
                 connection.Close();
                 if (diary > 0)
                 {
                     MessageBox.Show("Diary Saved");
+
                     Eventbox.Text = DiaryrichTextBox1.Text = dateTimePicker1.Text= ImportancecomboBox1.Text = string.Empty;
-                    pictureBox1 = null;
+                    ImportancecomboBox1.BackColor = Color.White;
+                    if (pictureBox1.ImageLocation!="")
+                    {
+                        pictureBox1.ImageLocation = string.Empty;
+                    }
+                    else
+                    {
+
+                    }
+                    this.Hide();
+                    this.Show();
+                    
                 }
                 else
                 {

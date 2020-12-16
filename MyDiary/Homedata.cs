@@ -24,7 +24,5 @@ namespace MyDiary
         public string ModfiedTime { get; set; }
 
 
-
-
     }
 }

@@ -65,8 +65,8 @@ namespace MyDiary
                 
             }
             dataGridView1.DataSource = list;
-            
             connection.Close();
+
 
 
 
@@ -76,7 +76,7 @@ namespace MyDiary
         {
             id = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
             UpdaterichTextBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            DlttextBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             pictureBox1.ImageLocation = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             
         }
@@ -89,15 +89,18 @@ namespace MyDiary
             connection.Open();
             string sql = "UPDATE DiaryEvent SET Diary='" + UpdaterichTextBox1.Text + "'WHERE Id=" + id;
             string sq3 = "UPDATE DiaryEvent SET ModfiedTime='" + ab + "'WHERE Id=" + id;
+            string sq4 = "UPDATE DiaryEvent SET Event='" + textBox2.Text + "'WHERE Id=" + id;
             SqlCommand command1 = new SqlCommand(sq3, connection);
             SqlCommand command = new SqlCommand(sql, connection);
-            
+            SqlCommand command2 = new SqlCommand(sq4, connection);
+
             int diary = command.ExecuteNonQuery();
             int diarys = command1.ExecuteNonQuery();
+            int diarys1 = command2.ExecuteNonQuery();
 
             if (diary > 0)
             {
-                MessageBox.Show("Diary Saved");
+                MessageBox.Show("Diary Modified");
                 string sq2 = "SELECT * FROM DiaryEvent";
                 SqlCommand commands = new SqlCommand(sq2, connection);
                 SqlDataReader reader = commands.ExecuteReader();
@@ -118,6 +121,7 @@ namespace MyDiary
                 }
                 dataGridView1.DataSource = list;
                 connection.Close();
+                UpdaterichTextBox1.Text = pictureBox1.ImageLocation = textBox2.Text = string.Empty;
             }
             else
             {
@@ -129,44 +133,53 @@ namespace MyDiary
 
         private void Dltbutton1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
-            connection.Open();
-            string sql = "DELETE FROM DiaryEvent WHERE Id=" + id;
-            
-
-            SqlCommand command = new SqlCommand(sql, connection);
-            int diary = command.ExecuteNonQuery();
-           
-            if (diary > 0)
+            if(DlttextBox2.Text!="")
             {
-                MessageBox.Show("Diary Deleted");
-                string sq2 = "SELECT * FROM DiaryEvent";
-                SqlCommand commands = new SqlCommand(sq2, connection);
-                SqlDataReader reader = commands.ExecuteReader();
-                List<Homedata> list = new List<Homedata>();
-                while (reader.Read())
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
+                connection.Open();
+                string sql = "DELETE FROM DiaryEvent WHERE Id=" + Int32.Parse(DlttextBox2.Text);
+
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                int diary = command.ExecuteNonQuery();
+
+                if (diary > 0)
                 {
-                    Homedata user = new Homedata();
-                    user.Id = (int)reader["Id"];
-                    user.Event = reader["Event"].ToString();
-                    user.Importance = reader["Importance"].ToString();
-                    user.Date = reader["Date"].ToString();
-                    user.Diary = reader["Diary"].ToString();
-                    user.Picture = reader["Picture"].ToString();
-                    user.CreatedTime = reader["CreatedTime"].ToString();
-                    user.ModfiedTime = reader["ModfiedTime"].ToString();
+                    MessageBox.Show("Diary Deleted");
+                    string sq2 = "SELECT * FROM DiaryEvent";
+                    SqlCommand commands = new SqlCommand(sq2, connection);
+                    SqlDataReader reader = commands.ExecuteReader();
+                    List<Homedata> list = new List<Homedata>();
+                    while (reader.Read())
+                    {
+                        Homedata user = new Homedata();
+                        user.Id = (int)reader["Id"];
+                        user.Event = reader["Event"].ToString();
+                        user.Importance = reader["Importance"].ToString();
+                        user.Date = reader["Date"].ToString();
+                        user.Diary = reader["Diary"].ToString();
+                        user.Picture = reader["Picture"].ToString();
+                        user.CreatedTime = reader["CreatedTime"].ToString();
+                        user.ModfiedTime = reader["ModfiedTime"].ToString();
 
-                    list.Add(user);
+                        list.Add(user);
+                    }
+                    dataGridView1.DataSource = list;
+                    connection.Close();
+                    DlttextBox2.Text = string.Empty;
+
+
                 }
-                dataGridView1.DataSource = list;
-                connection.Close();
-
-
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("There Is Nothing To Delete");
             }
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,19 +219,16 @@ namespace MyDiary
 
         }
 
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
-            UpdaterichTextBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            DlttextBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            pictureBox1.ImageLocation = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-        }
+        
 
         private void DlttextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void UpdaterichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

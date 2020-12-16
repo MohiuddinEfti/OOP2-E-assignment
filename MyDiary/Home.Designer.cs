@@ -41,10 +41,14 @@ namespace MyDiary
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Searchlabel1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Diarybutton1
@@ -76,6 +80,7 @@ namespace MyDiary
             this.UpdaterichTextBox1.Size = new System.Drawing.Size(697, 218);
             this.UpdaterichTextBox1.TabIndex = 2;
             this.UpdaterichTextBox1.Text = "";
+            this.UpdaterichTextBox1.TextChanged += new System.EventHandler(this.UpdaterichTextBox1_TextChanged);
             // 
             // pictureBox1
             // 
@@ -91,27 +96,26 @@ namespace MyDiary
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Dltbutton1);
             this.groupBox1.Controls.Add(this.DlttextBox2);
-            this.groupBox1.Controls.Add(this.ModifyDiary);
-            this.groupBox1.Location = new System.Drawing.Point(35, 27);
+            this.groupBox1.Location = new System.Drawing.Point(35, 183);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(305, 280);
+            this.groupBox1.Size = new System.Drawing.Size(305, 124);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Modification Panel";
+            this.groupBox1.Text = "Delete Panel";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 112);
+            this.label1.Location = new System.Drawing.Point(40, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Event Name";
+            this.label1.Text = "Event Id";
             // 
             // Dltbutton1
             // 
-            this.Dltbutton1.Location = new System.Drawing.Point(104, 153);
+            this.Dltbutton1.Location = new System.Drawing.Point(129, 86);
             this.Dltbutton1.Name = "Dltbutton1";
             this.Dltbutton1.Size = new System.Drawing.Size(75, 23);
             this.Dltbutton1.TabIndex = 6;
@@ -122,7 +126,7 @@ namespace MyDiary
             // DlttextBox2
             // 
             this.DlttextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.DlttextBox2.Location = new System.Drawing.Point(115, 104);
+            this.DlttextBox2.Location = new System.Drawing.Point(98, 42);
             this.DlttextBox2.Name = "DlttextBox2";
             this.DlttextBox2.Size = new System.Drawing.Size(138, 26);
             this.DlttextBox2.TabIndex = 5;
@@ -130,7 +134,7 @@ namespace MyDiary
             // 
             // ModifyDiary
             // 
-            this.ModifyDiary.Location = new System.Drawing.Point(185, 153);
+            this.ModifyDiary.Location = new System.Drawing.Point(129, 81);
             this.ModifyDiary.Name = "ModifyDiary";
             this.ModifyDiary.Size = new System.Drawing.Size(75, 23);
             this.ModifyDiary.TabIndex = 4;
@@ -166,13 +170,42 @@ namespace MyDiary
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(304, 230);
             this.dataGridView2.TabIndex = 5;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.ModifyDiary);
+            this.groupBox2.Location = new System.Drawing.Point(35, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(305, 124);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Modify Panel";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Event Name";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox2.Location = new System.Drawing.Point(98, 42);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(138, 26);
+            this.textBox2.TabIndex = 5;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 621);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.Searchlabel1);
             this.Controls.Add(this.textBox1);
@@ -190,6 +223,8 @@ namespace MyDiary
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +244,8 @@ namespace MyDiary
         private System.Windows.Forms.TextBox DlttextBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

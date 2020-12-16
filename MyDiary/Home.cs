@@ -121,7 +121,7 @@ namespace MyDiary
                 }
                 dataGridView1.DataSource = list;
                 connection.Close();
-                UpdaterichTextBox1.Text = pictureBox1.ImageLocation = textBox2.Text = string.Empty;
+                UpdaterichTextBox1.Text = pictureBox1.ImageLocation=textBox2.Text = string.Empty;
             }
             else
             {

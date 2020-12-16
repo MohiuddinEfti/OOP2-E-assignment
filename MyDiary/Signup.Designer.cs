@@ -30,20 +30,22 @@ namespace MyDiary
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Namebox = new System.Windows.Forms.TextBox();
-            this.PasswordBox = new System.Windows.Forms.TextBox();
+            this.Emailbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.Passwordlabel = new System.Windows.Forms.Label();
-            this.Namelabel1 = new System.Windows.Forms.Label();
+            this.Emaillabel = new System.Windows.Forms.Label();
             this.Confirmbox = new System.Windows.Forms.TextBox();
             this.ConfirmPasslabel = new System.Windows.Forms.Label();
-            this.Emailbox = new System.Windows.Forms.TextBox();
-            this.Emaillabel = new System.Windows.Forms.Label();
+            this.Namebox = new System.Windows.Forms.TextBox();
+            this.PasswordBox = new System.Windows.Forms.TextBox();
+            this.Passwordlabel = new System.Windows.Forms.Label();
+            this.Namelabel1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.Emailbox);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.Emaillabel);
@@ -59,6 +61,55 @@ namespace MyDiary
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign Up";
+            // 
+            // Emailbox
+            // 
+            this.Emailbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Emailbox.Location = new System.Drawing.Point(160, 192);
+            this.Emailbox.Name = "Emailbox";
+            this.Emailbox.Size = new System.Drawing.Size(206, 26);
+            this.Emailbox.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(177, 262);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Sign up";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Emaillabel
+            // 
+            this.Emaillabel.AutoSize = true;
+            this.Emaillabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Emaillabel.Location = new System.Drawing.Point(68, 195);
+            this.Emaillabel.Name = "Emaillabel";
+            this.Emaillabel.Size = new System.Drawing.Size(48, 20);
+            this.Emaillabel.TabIndex = 8;
+            this.Emaillabel.Text = "Email";
+            // 
+            // Confirmbox
+            // 
+            this.Confirmbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Confirmbox.Location = new System.Drawing.Point(160, 147);
+            this.Confirmbox.Name = "Confirmbox";
+            this.Confirmbox.PasswordChar = '*';
+            this.Confirmbox.Size = new System.Drawing.Size(206, 26);
+            this.Confirmbox.TabIndex = 5;
+            // 
+            // ConfirmPasslabel
+            // 
+            this.ConfirmPasslabel.AutoSize = true;
+            this.ConfirmPasslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ConfirmPasslabel.Location = new System.Drawing.Point(18, 150);
+            this.ConfirmPasslabel.Name = "ConfirmPasslabel";
+            this.ConfirmPasslabel.Size = new System.Drawing.Size(137, 20);
+            this.ConfirmPasslabel.TabIndex = 6;
+            this.ConfirmPasslabel.Text = "Confirm Password";
             // 
             // Namebox
             // 
@@ -76,18 +127,6 @@ namespace MyDiary
             this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(206, 26);
             this.PasswordBox.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(189, 262);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Sign up";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Passwordlabel
             // 
@@ -109,42 +148,17 @@ namespace MyDiary
             this.Namelabel1.TabIndex = 3;
             this.Namelabel1.Text = "Name";
             // 
-            // Confirmbox
+            // button2
             // 
-            this.Confirmbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirmbox.Location = new System.Drawing.Point(160, 147);
-            this.Confirmbox.Name = "Confirmbox";
-            this.Confirmbox.PasswordChar = '*';
-            this.Confirmbox.Size = new System.Drawing.Size(206, 26);
-            this.Confirmbox.TabIndex = 5;
-            // 
-            // ConfirmPasslabel
-            // 
-            this.ConfirmPasslabel.AutoSize = true;
-            this.ConfirmPasslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ConfirmPasslabel.Location = new System.Drawing.Point(18, 150);
-            this.ConfirmPasslabel.Name = "ConfirmPasslabel";
-            this.ConfirmPasslabel.Size = new System.Drawing.Size(137, 20);
-            this.ConfirmPasslabel.TabIndex = 6;
-            this.ConfirmPasslabel.Text = "Confirm Password";
-            // 
-            // Emailbox
-            // 
-            this.Emailbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Emailbox.Location = new System.Drawing.Point(160, 192);
-            this.Emailbox.Name = "Emailbox";
-            this.Emailbox.Size = new System.Drawing.Size(206, 26);
-            this.Emailbox.TabIndex = 7;
-            // 
-            // Emaillabel
-            // 
-            this.Emaillabel.AutoSize = true;
-            this.Emaillabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Emaillabel.Location = new System.Drawing.Point(68, 195);
-            this.Emaillabel.Name = "Emaillabel";
-            this.Emaillabel.Size = new System.Drawing.Size(48, 20);
-            this.Emaillabel.TabIndex = 8;
-            this.Emaillabel.Text = "Email";
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(258, 262);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Signup
             // 
@@ -173,5 +187,6 @@ namespace MyDiary
         private System.Windows.Forms.TextBox PasswordBox;
         private System.Windows.Forms.Label Passwordlabel;
         private System.Windows.Forms.Label Namelabel1;
+        private System.Windows.Forms.Button button2;
     }
 }

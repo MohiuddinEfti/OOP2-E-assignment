@@ -134,6 +134,7 @@ namespace MyDiary
             this.Name = "Login";
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

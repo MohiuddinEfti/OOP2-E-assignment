@@ -30,6 +30,9 @@ namespace MyDiary
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NewEventlabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ImportancecomboBox1 = new System.Windows.Forms.ComboBox();
             this.Uploadbutton1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Datelabel1 = new System.Windows.Forms.Label();
@@ -39,9 +42,6 @@ namespace MyDiary
             this.Homebutton1 = new System.Windows.Forms.Button();
             this.Savebutton1 = new System.Windows.Forms.Button();
             this.Logoutbutton1 = new System.Windows.Forms.Button();
-            this.ImportancecomboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.NewEventlabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +61,39 @@ namespace MyDiary
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Event";
+            // 
+            // NewEventlabel
+            // 
+            this.NewEventlabel.AutoSize = true;
+            this.NewEventlabel.Location = new System.Drawing.Point(21, 67);
+            this.NewEventlabel.Name = "NewEventlabel";
+            this.NewEventlabel.Size = new System.Drawing.Size(35, 13);
+            this.NewEventlabel.TabIndex = 9;
+            this.NewEventlabel.Text = "Event";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Importance";
+            // 
+            // ImportancecomboBox1
+            // 
+            this.ImportancecomboBox1.BackColor = System.Drawing.Color.White;
+            this.ImportancecomboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ImportancecomboBox1.FormattingEnabled = true;
+            this.ImportancecomboBox1.Items.AddRange(new object[] {
+            "High",
+            "Moderate",
+            "Less"});
+            this.ImportancecomboBox1.Location = new System.Drawing.Point(72, 100);
+            this.ImportancecomboBox1.Name = "ImportancecomboBox1";
+            this.ImportancecomboBox1.Size = new System.Drawing.Size(138, 28);
+            this.ImportancecomboBox1.TabIndex = 6;
+            this.ImportancecomboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Uploadbutton1
             // 
@@ -147,39 +180,6 @@ namespace MyDiary
             this.Logoutbutton1.Text = "Log out";
             this.Logoutbutton1.UseVisualStyleBackColor = true;
             this.Logoutbutton1.Click += new System.EventHandler(this.Logoutbutton1_Click);
-            // 
-            // ImportancecomboBox1
-            // 
-            this.ImportancecomboBox1.BackColor = System.Drawing.Color.White;
-            this.ImportancecomboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ImportancecomboBox1.FormattingEnabled = true;
-            this.ImportancecomboBox1.Items.AddRange(new object[] {
-            "High",
-            "Moderate",
-            "Less"});
-            this.ImportancecomboBox1.Location = new System.Drawing.Point(72, 100);
-            this.ImportancecomboBox1.Name = "ImportancecomboBox1";
-            this.ImportancecomboBox1.Size = new System.Drawing.Size(138, 28);
-            this.ImportancecomboBox1.TabIndex = 6;
-            this.ImportancecomboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Importance";
-            // 
-            // NewEventlabel
-            // 
-            this.NewEventlabel.AutoSize = true;
-            this.NewEventlabel.Location = new System.Drawing.Point(21, 67);
-            this.NewEventlabel.Name = "NewEventlabel";
-            this.NewEventlabel.Size = new System.Drawing.Size(35, 13);
-            this.NewEventlabel.TabIndex = 9;
-            this.NewEventlabel.Text = "Event";
             // 
             // Diary
             // 

@@ -37,8 +37,17 @@ namespace MyDiary
                 if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     img = ofd.FileName;
+                    if(img!="")
+                    {
+                        abc = img;
+                    }
+                    else
+                    {
+                        abc = string.Empty;
+                    }
+                   
                     pictureBox1.ImageLocation = img;
-                    abc = img;
+                    
                     
                     
                 }
@@ -69,7 +78,8 @@ namespace MyDiary
         }
         private void Savebutton1_Click(object sender, EventArgs e)
         {
-            if(Eventbox.Text=="")
+           
+            if (Eventbox.Text=="")
             {
                 MessageBox.Show("ERROR Event Is Empty");
             }
@@ -94,16 +104,11 @@ namespace MyDiary
 
                     Eventbox.Text = DiaryrichTextBox1.Text = dateTimePicker1.Text= ImportancecomboBox1.Text = string.Empty;
                     ImportancecomboBox1.BackColor = Color.White;
-                    if (pictureBox1.ImageLocation!="")
-                    {
-                        pictureBox1.ImageLocation = string.Empty;
-                    }
-                    else
-                    {
-
-                    }
-                    this.Hide();
-                    this.Show();
+                    pictureBox1.ImageLocation = null;
+                    abc = string.Empty;
+                    
+                   
+                    
                     
                 }
                 else
@@ -153,6 +158,11 @@ namespace MyDiary
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

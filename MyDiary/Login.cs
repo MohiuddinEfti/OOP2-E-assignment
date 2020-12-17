@@ -35,7 +35,8 @@ namespace MyDiary
 
         private void Signinbutton_Click(object sender, EventArgs e)
         {
-            if(Namebox.Text=="")
+            
+            if (Namebox.Text=="")
             {
                 MessageBox.Show("ERROR Username Is Empty");
 
@@ -52,7 +53,7 @@ namespace MyDiary
                 
 
                 SqlCommand cmd = new SqlCommand("SELECT * FROM DiarySignUp WHERE Name = '" + Namebox.Text+"' AND [Password] = '"+PasswordBox.Text+"' ", connection);
-
+                
 
 
                 connection.Open();
@@ -64,6 +65,7 @@ namespace MyDiary
                 if ((sdr.Read() == true))
 
                 {
+                    
                     Diary mainForm = new Diary();
 
                     mainForm.Show();
@@ -89,6 +91,11 @@ namespace MyDiary
         }
 
         private void Login_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
         }

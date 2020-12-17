@@ -101,7 +101,7 @@ namespace MyDiary
             this.groupBox1.Size = new System.Drawing.Size(305, 124);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Delete Panel";
+            this.groupBox1.Text = "Diary Delete Panel";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
@@ -181,16 +181,16 @@ namespace MyDiary
             this.groupBox2.Size = new System.Drawing.Size(305, 124);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Modify Panel";
+            this.groupBox2.Text = "Event Modify Panel";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 50);
+            this.label2.Location = new System.Drawing.Point(26, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Event Name";
+            this.label2.Text = "Modify Name";
             // 
             // textBox2
             // 

@@ -48,6 +48,7 @@ namespace MyDiary
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.NewEventlabel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ImportancecomboBox1);
@@ -135,6 +136,7 @@ namespace MyDiary
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(93, 368);
             this.pictureBox1.Name = "pictureBox1";
@@ -146,6 +148,7 @@ namespace MyDiary
             // 
             // DiaryrichTextBox1
             // 
+            this.DiaryrichTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DiaryrichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DiaryrichTextBox1.Location = new System.Drawing.Point(371, 57);
             this.DiaryrichTextBox1.Name = "DiaryrichTextBox1";
@@ -155,6 +158,7 @@ namespace MyDiary
             // 
             // Homebutton1
             // 
+            this.Homebutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Homebutton1.Location = new System.Drawing.Point(749, 556);
             this.Homebutton1.Name = "Homebutton1";
             this.Homebutton1.Size = new System.Drawing.Size(138, 23);
@@ -165,6 +169,7 @@ namespace MyDiary
             // 
             // Savebutton1
             // 
+            this.Savebutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Savebutton1.Location = new System.Drawing.Point(587, 556);
             this.Savebutton1.Name = "Savebutton1";
             this.Savebutton1.Size = new System.Drawing.Size(138, 23);
@@ -175,6 +180,7 @@ namespace MyDiary
             // 
             // Logoutbutton1
             // 
+            this.Logoutbutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Logoutbutton1.Location = new System.Drawing.Point(1024, 12);
             this.Logoutbutton1.Name = "Logoutbutton1";
             this.Logoutbutton1.Size = new System.Drawing.Size(75, 23);
@@ -195,6 +201,7 @@ namespace MyDiary
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Diary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Diary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Diary_FormClosing);
             this.Load += new System.EventHandler(this.Diary_Load);

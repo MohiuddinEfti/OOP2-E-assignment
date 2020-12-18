@@ -14,11 +14,13 @@ namespace MyDiary
 {
     public partial class Login : Form
     {
+        
         private SqlConnection main_form;
-
+       
         public Login()
         {
             InitializeComponent();
+            
         }
 
         private void Signup_Click(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace MyDiary
 
         private void Signinbutton_Click(object sender, EventArgs e)
         {
-            
+           
             if (Namebox.Text=="")
             {
                 MessageBox.Show("ERROR Username Is Empty");
@@ -71,7 +73,8 @@ namespace MyDiary
                     mainForm.Show();
 
                     this.Hide();
-
+                    
+                    
                 }
 
                 else

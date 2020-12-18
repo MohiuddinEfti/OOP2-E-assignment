@@ -16,11 +16,14 @@ namespace MyDiary
 {
     public partial class Diary : Form
     {
-        
+        public int Test { get; set; }
+
+
 
         public Diary()
         {
             InitializeComponent();
+            
         }
 
         private void Namebox_TextChanged(object sender, EventArgs e)
@@ -81,7 +84,9 @@ namespace MyDiary
            
             if (Eventbox.Text=="")
             {
+                
                 MessageBox.Show("ERROR Event Is Empty");
+                
             }
             else if(DiaryrichTextBox1.Text == "")
             {
@@ -163,6 +168,17 @@ namespace MyDiary
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+           
+            if(DateTime.Today < dateTimePicker1.Value)
+            {
+                MessageBox.Show("ERROR Your Date Is Not Valid");
+                dateTimePicker1.Value = DateTime.Today;
+
+            }
         }
     }
 }

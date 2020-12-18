@@ -109,9 +109,11 @@ namespace MyDiary
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateTimePicker1.Location = new System.Drawing.Point(72, 138);
+            this.dateTimePicker1.MaxDate = new System.DateTime(9998, 12, 18, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 26);
             this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // Datelabel1
             // 

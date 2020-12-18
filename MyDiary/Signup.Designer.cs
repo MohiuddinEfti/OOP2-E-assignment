@@ -29,6 +29,7 @@ namespace MyDiary
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.Emailbox = new System.Windows.Forms.TextBox();
@@ -46,6 +47,7 @@ namespace MyDiary
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.Emailbox);
             this.groupBox1.Controls.Add(this.button1);
@@ -56,7 +58,7 @@ namespace MyDiary
             this.groupBox1.Controls.Add(this.PasswordBox);
             this.groupBox1.Controls.Add(this.Passwordlabel);
             this.groupBox1.Controls.Add(this.Namelabel1);
-            this.groupBox1.Location = new System.Drawing.Point(334, 136);
+            this.groupBox1.Location = new System.Drawing.Point(315, 127);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(401, 348);
             this.groupBox1.TabIndex = 8;
@@ -165,8 +167,11 @@ namespace MyDiary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1111, 621);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Signup";

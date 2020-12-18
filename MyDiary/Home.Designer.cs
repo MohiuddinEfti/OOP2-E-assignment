@@ -71,16 +71,17 @@ namespace MyDiary
             this.dataGridView1.Location = new System.Drawing.Point(675, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(391, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(387, 174);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // UpdaterichTextBox1
             // 
             this.UpdaterichTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UpdaterichTextBox1.Location = new System.Drawing.Point(365, 325);
+            this.UpdaterichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdaterichTextBox1.Location = new System.Drawing.Point(365, 257);
             this.UpdaterichTextBox1.Name = "UpdaterichTextBox1";
-            this.UpdaterichTextBox1.Size = new System.Drawing.Size(697, 218);
+            this.UpdaterichTextBox1.Size = new System.Drawing.Size(697, 286);
             this.UpdaterichTextBox1.TabIndex = 2;
             this.UpdaterichTextBox1.Text = "";
             this.UpdaterichTextBox1.TextChanged += new System.EventHandler(this.UpdaterichTextBox1_TextChanged);
@@ -150,7 +151,7 @@ namespace MyDiary
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(365, 27);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(304, 26);
@@ -176,7 +177,7 @@ namespace MyDiary
             this.dataGridView2.Location = new System.Drawing.Point(365, 77);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(304, 230);
+            this.dataGridView2.Size = new System.Drawing.Size(304, 174);
             this.dataGridView2.TabIndex = 5;
             // 
             // groupBox2

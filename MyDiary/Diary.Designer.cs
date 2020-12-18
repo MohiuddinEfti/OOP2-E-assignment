@@ -29,6 +29,7 @@ namespace MyDiary
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Diary));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.NewEventlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@ namespace MyDiary
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.NewEventlabel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ImportancecomboBox1);
@@ -66,18 +68,20 @@ namespace MyDiary
             // NewEventlabel
             // 
             this.NewEventlabel.AutoSize = true;
-            this.NewEventlabel.Location = new System.Drawing.Point(21, 67);
+            this.NewEventlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewEventlabel.Location = new System.Drawing.Point(20, 67);
             this.NewEventlabel.Name = "NewEventlabel";
-            this.NewEventlabel.Size = new System.Drawing.Size(35, 13);
+            this.NewEventlabel.Size = new System.Drawing.Size(42, 16);
             this.NewEventlabel.TabIndex = 9;
             this.NewEventlabel.Text = "Event";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 103);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Importance";
             // 
@@ -90,7 +94,7 @@ namespace MyDiary
             "High",
             "Moderate",
             "Less"});
-            this.ImportancecomboBox1.Location = new System.Drawing.Point(72, 100);
+            this.ImportancecomboBox1.Location = new System.Drawing.Point(82, 100);
             this.ImportancecomboBox1.Name = "ImportancecomboBox1";
             this.ImportancecomboBox1.Size = new System.Drawing.Size(138, 28);
             this.ImportancecomboBox1.TabIndex = 6;
@@ -109,7 +113,7 @@ namespace MyDiary
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(72, 138);
+            this.dateTimePicker1.Location = new System.Drawing.Point(82, 138);
             this.dateTimePicker1.MaxDate = new System.DateTime(9998, 12, 18, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 26);
@@ -119,16 +123,17 @@ namespace MyDiary
             // Datelabel1
             // 
             this.Datelabel1.AutoSize = true;
-            this.Datelabel1.Location = new System.Drawing.Point(27, 143);
+            this.Datelabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Datelabel1.Location = new System.Drawing.Point(22, 143);
             this.Datelabel1.Name = "Datelabel1";
-            this.Datelabel1.Size = new System.Drawing.Size(30, 13);
+            this.Datelabel1.Size = new System.Drawing.Size(37, 16);
             this.Datelabel1.TabIndex = 3;
             this.Datelabel1.Text = "Date";
             // 
             // Eventbox
             // 
             this.Eventbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Eventbox.Location = new System.Drawing.Point(72, 60);
+            this.Eventbox.Location = new System.Drawing.Point(82, 60);
             this.Eventbox.Name = "Eventbox";
             this.Eventbox.Size = new System.Drawing.Size(138, 26);
             this.Eventbox.TabIndex = 1;
@@ -137,6 +142,7 @@ namespace MyDiary
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(93, 368);
             this.pictureBox1.Name = "pictureBox1";
@@ -150,18 +156,18 @@ namespace MyDiary
             // 
             this.DiaryrichTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DiaryrichTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DiaryrichTextBox1.Location = new System.Drawing.Point(371, 57);
+            this.DiaryrichTextBox1.Location = new System.Drawing.Point(408, 104);
             this.DiaryrichTextBox1.Name = "DiaryrichTextBox1";
-            this.DiaryrichTextBox1.Size = new System.Drawing.Size(681, 457);
+            this.DiaryrichTextBox1.Size = new System.Drawing.Size(561, 387);
             this.DiaryrichTextBox1.TabIndex = 2;
             this.DiaryrichTextBox1.Text = "";
             // 
             // Homebutton1
             // 
             this.Homebutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Homebutton1.Location = new System.Drawing.Point(749, 556);
+            this.Homebutton1.Location = new System.Drawing.Point(698, 556);
             this.Homebutton1.Name = "Homebutton1";
-            this.Homebutton1.Size = new System.Drawing.Size(138, 23);
+            this.Homebutton1.Size = new System.Drawing.Size(111, 23);
             this.Homebutton1.TabIndex = 3;
             this.Homebutton1.Text = "Home";
             this.Homebutton1.UseVisualStyleBackColor = true;
@@ -170,9 +176,9 @@ namespace MyDiary
             // Savebutton1
             // 
             this.Savebutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Savebutton1.Location = new System.Drawing.Point(587, 556);
+            this.Savebutton1.Location = new System.Drawing.Point(581, 556);
             this.Savebutton1.Name = "Savebutton1";
-            this.Savebutton1.Size = new System.Drawing.Size(138, 23);
+            this.Savebutton1.Size = new System.Drawing.Size(111, 23);
             this.Savebutton1.TabIndex = 4;
             this.Savebutton1.Text = "Save";
             this.Savebutton1.UseVisualStyleBackColor = true;
@@ -181,7 +187,7 @@ namespace MyDiary
             // Logoutbutton1
             // 
             this.Logoutbutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Logoutbutton1.Location = new System.Drawing.Point(1024, 12);
+            this.Logoutbutton1.Location = new System.Drawing.Point(1009, 25);
             this.Logoutbutton1.Name = "Logoutbutton1";
             this.Logoutbutton1.Size = new System.Drawing.Size(75, 23);
             this.Logoutbutton1.TabIndex = 5;
@@ -193,6 +199,8 @@ namespace MyDiary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1111, 621);
             this.Controls.Add(this.Logoutbutton1);
             this.Controls.Add(this.Savebutton1);
@@ -200,6 +208,7 @@ namespace MyDiary
             this.Controls.Add(this.DiaryrichTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Diary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Diary";

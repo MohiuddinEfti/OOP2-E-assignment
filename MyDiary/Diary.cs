@@ -92,6 +92,12 @@ namespace MyDiary
             {
                 MessageBox.Show("ERROR Diary Is Empty");
             }
+            else if (DateTime.Today < dateTimePicker1.Value)
+            {
+                MessageBox.Show("ERROR Your Date Is Not Valid");
+                dateTimePicker1.Value = DateTime.Today;
+
+            }
             else
             {
                 
@@ -141,23 +147,7 @@ namespace MyDiary
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(ImportancecomboBox1.Text== "High")
-            {
-                ImportancecomboBox1.BackColor = Color.Green;
-            }
-            else if(ImportancecomboBox1.Text== "Moderate")
-            {
-                ImportancecomboBox1.BackColor = Color.Yellow;
-            }
-            else if(ImportancecomboBox1.Text=="Less")
-            {
-                ImportancecomboBox1.BackColor = Color.Red;
-            }
-            else
-            {
-                ImportancecomboBox1.BackColor = Color.White;
-
-            }
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -173,12 +163,7 @@ namespace MyDiary
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
            
-            if(DateTime.Today < dateTimePicker1.Value)
-            {
-                MessageBox.Show("ERROR Your Date Is Not Valid");
-                dateTimePicker1.Value = DateTime.Today;
-
-            }
+            
         }
     }
 }

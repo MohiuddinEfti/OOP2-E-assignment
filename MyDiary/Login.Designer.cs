@@ -29,6 +29,7 @@ namespace MyDiary
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Namebox = new System.Windows.Forms.TextBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.Signinbutton = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@ namespace MyDiary
             this.Signup = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,7 @@ namespace MyDiary
             // 
             // Signinbutton
             // 
+            this.Signinbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.Signinbutton.Location = new System.Drawing.Point(136, 216);
             this.Signinbutton.Name = "Signinbutton";
             this.Signinbutton.Size = new System.Drawing.Size(75, 23);
@@ -90,6 +93,7 @@ namespace MyDiary
             // Signup
             // 
             this.Signup.BackColor = System.Drawing.Color.Transparent;
+            this.Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.Signup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Signup.Location = new System.Drawing.Point(232, 216);
             this.Signup.Name = "Signup";
@@ -112,6 +116,7 @@ namespace MyDiary
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.Namebox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.PasswordBox);
@@ -119,6 +124,7 @@ namespace MyDiary
             this.groupBox1.Controls.Add(this.Signinbutton);
             this.groupBox1.Controls.Add(this.Passwordlabel);
             this.groupBox1.Controls.Add(this.Namelabel1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(334, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(360, 348);
@@ -126,19 +132,38 @@ namespace MyDiary
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "My Diary";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Mistral", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(467, 114);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Digital Diary";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1111, 621);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
-            this.Text = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Digital Diary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,6 +177,7 @@ namespace MyDiary
         private System.Windows.Forms.Button Signup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -43,7 +43,6 @@ namespace MyDiary
             this.Homebutton1 = new System.Windows.Forms.Button();
             this.Savebutton1 = new System.Windows.Forms.Button();
             this.Logoutbutton1 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -196,16 +195,6 @@ namespace MyDiary
             this.Logoutbutton1.UseVisualStyleBackColor = true;
             this.Logoutbutton1.Click += new System.EventHandler(this.Logoutbutton1_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(302, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Upload Picture";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Diary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,7 +202,6 @@ namespace MyDiary
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1111, 621);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Logoutbutton1);
             this.Controls.Add(this.Savebutton1);
             this.Controls.Add(this.Homebutton1);
@@ -248,6 +236,5 @@ namespace MyDiary
         private System.Windows.Forms.ComboBox ImportancecomboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label NewEventlabel;
-        private System.Windows.Forms.Button button1;
     }
 }

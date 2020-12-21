@@ -15,16 +15,18 @@ namespace MyDiary
     public partial class Home : Form
     {
         DateTime time = DateTime.Now;
+        public int id1;
         int id;
-        public Home()
+        public Home(int take)
         {
+            id1 = take;
             InitializeComponent();
             
         }
 
         private void Diarybutton1_Click(object sender, EventArgs e)
         {
-            Diary dy = new Diary();
+            Diary dy = new Diary(id1);
             dy.Show();
             this.Hide();
         }
@@ -43,7 +45,7 @@ namespace MyDiary
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
             connection.Open();
-            string sq1 = "SELECT * FROM Event";
+            string sq1 = "SELECT * FROM Event Where SignUpID="+id1;
             SqlCommand commands = new SqlCommand(sq1, connection);
             SqlDataReader reader = commands.ExecuteReader();
             List<Homedata> list = new List<Homedata>();
@@ -147,7 +149,7 @@ namespace MyDiary
                 if (diary > 0)
                 {
                     MessageBox.Show("Diary Deleted");
-                    string sq2 = "SELECT * FROM Event";
+                    string sq2 = "SELECT * FROM Event Where SignUpID=" + id1;
                     SqlCommand commands = new SqlCommand(sq2, connection);
                     SqlDataReader reader = commands.ExecuteReader();
                     List<Homedata> list = new List<Homedata>();

@@ -14,7 +14,7 @@ namespace MyDiary
 {
     public partial class Login : Form
     {
-        
+        public int take;
         private SqlConnection main_form;
        
         public Login()
@@ -50,7 +50,11 @@ namespace MyDiary
             }
             else
             {
-                Id i = new Id();
+
+
+
+
+                
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SignUp"].ConnectionString);
                 
 
@@ -60,21 +64,25 @@ namespace MyDiary
 
                 connection.Open();
 
+
                 SqlDataReader sdr = cmd.ExecuteReader();
-                
 
 
                 if ((sdr.Read() == true))
 
                 {
-                    
-                    Diary mainForm = new Diary();
 
-                    mainForm.Show();
+                    string sq1 = "SELECT * FROM SignUp WHERE Name = '" + Namebox.Text + "'";
+                    SqlCommand commands = new SqlCommand(sq1, connection);
+
+                    take = (int)sdr["Id"];
+                    Diary d = new Diary(take);
+
+                    d.Show();
 
                     this.Hide();
-                    
-                    
+
+
                 }
 
                 else

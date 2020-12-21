@@ -16,16 +16,19 @@ namespace MyDiary
 {
     public partial class Diary : Form
     {
-        public int Test { get; set; }
 
 
+        public int catchId;
 
-        public Diary()
+        public Diary(int take)
         {
+            catchId = take;
             InitializeComponent();
             dateTimePicker1.MaxDate = DateTime.Today;
 
         }
+        
+        
 
         private void Namebox_TextChanged(object sender, EventArgs e)
         {
@@ -76,7 +79,7 @@ namespace MyDiary
 
         private void Homebutton1_Click(object sender, EventArgs e)
         {
-            Home hm = new Home();
+            Home hm = new Home(catchId);
             hm.Show();
             this.Hide();
         }
@@ -100,7 +103,7 @@ namespace MyDiary
                 string ab = time.ToString("h:mm:ss tt");
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
                 connection.Open();
-                string sq1 = "INSERT INTO Event(Event,Importance,Date,Diary,Picture,CreatedTime) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ abc + "','"+ ab+ "')";
+                string sq1 = "INSERT INTO Event(Event,Importance,Date,Diary,Picture,CreatedTime,SignUpID) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ abc + "','"+ ab+ "','" + catchId + "')";
                 
                 SqlCommand command = new SqlCommand(sq1, connection);
                 int diary = command.ExecuteNonQuery();
@@ -160,6 +163,11 @@ namespace MyDiary
         {
 
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Text = catchId.ToString();
         }
     }
 }

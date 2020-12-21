@@ -103,7 +103,7 @@ namespace MyDiary
             if (diary > 0)
             {
                 MessageBox.Show("Diary Modified");
-                string sq2 = "SELECT * FROM Event";
+                string sq2 = "SELECT * FROM Event Where SignUpID=" + id1;
                 SqlCommand commands = new SqlCommand(sq2, connection);
                 SqlDataReader reader = commands.ExecuteReader();
                 List<Homedata> list = new List<Homedata>();
@@ -197,8 +197,10 @@ namespace MyDiary
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
             connection.Open();
-            string sq1 = "SELECT * FROM Event WHERE Event LIKE '"+textBox1.Text+"%'";
+            string sq1 = "SELECT * FROM Event WHERE Event LIKE '"+textBox1.Text+ "%' AND [SignUpID] = '" + id1 + "' ";
+            
             SqlCommand commands = new SqlCommand(sq1, connection);
+            
             SqlDataReader reader = commands.ExecuteReader();
             List<Homedata> list = new List<Homedata>();
 

@@ -46,9 +46,9 @@ namespace MyDiary
             }
             else
             {
-                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiarySignUp"].ConnectionString);
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SignUp"].ConnectionString);
                 connection.Open();
-                string sql = "INSERT INTO DiarySignUp(Name,Password,Email) VALUES('" + Namebox.Text + "','" + PasswordBox.Text + "','" + Emailbox.Text + "')";
+                string sql = "INSERT INTO SignUp(Name,Password,Email) VALUES('" + Namebox.Text + "','" + PasswordBox.Text + "','" + Emailbox.Text + "')";
                 SqlCommand command = new SqlCommand(sql, connection);
                 int result = command.ExecuteNonQuery();
                 connection.Close();

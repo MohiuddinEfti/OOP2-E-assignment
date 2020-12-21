@@ -23,7 +23,8 @@ namespace MyDiary
         public Diary()
         {
             InitializeComponent();
-            
+            dateTimePicker1.MaxDate = DateTime.Today;
+
         }
 
         private void Namebox_TextChanged(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace MyDiary
         }
         private void Savebutton1_Click(object sender, EventArgs e)
         {
-           
+            
             if (Eventbox.Text=="")
             {
                 
@@ -91,21 +92,15 @@ namespace MyDiary
             else if(DiaryrichTextBox1.Text == "")
             {
                 MessageBox.Show("ERROR Diary Is Empty");
-            }
-            else if (DateTime.Today < dateTimePicker1.Value)
-            {
-                MessageBox.Show("ERROR Your Date Is Not Valid");
-                dateTimePicker1.Value = DateTime.Today;
-
-            }
-            else
+            }            
+            else 
             {
                 
                 DateTime time = DateTime.Now;
                 string ab = time.ToString("h:mm:ss tt");
-                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
                 connection.Open();
-                string sq1 = "INSERT INTO DiaryEvent(Event,Importance,Date,Diary,Picture,CreatedTime,ModfiedTime) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ abc + "','"+ ab+ "','" + ab + "')";
+                string sq1 = "INSERT INTO Event(Event,Importance,Date,Diary,Picture,CreatedTime) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ abc + "','"+ ab+ "')";
                 SqlCommand command = new SqlCommand(sq1, connection);
                 int diary = command.ExecuteNonQuery();
                 connection.Close();
@@ -162,7 +157,7 @@ namespace MyDiary
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-           
+
             
         }
     }

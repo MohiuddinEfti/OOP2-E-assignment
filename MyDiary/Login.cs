@@ -51,10 +51,10 @@ namespace MyDiary
             else
             {
                 Id i = new Id();
-                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiarySignUp"].ConnectionString);
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SignUp"].ConnectionString);
                 
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM DiarySignUp WHERE Name = '" + Namebox.Text+"' AND [Password] = '"+PasswordBox.Text+"' ", connection);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM SignUp WHERE Name = '" + Namebox.Text+"' AND [Password] = '"+PasswordBox.Text+"' ", connection);
                 
 
 

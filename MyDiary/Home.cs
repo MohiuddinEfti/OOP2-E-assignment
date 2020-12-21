@@ -41,9 +41,9 @@ namespace MyDiary
         
         private void Home_Load(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
             connection.Open();
-            string sq1 = "SELECT * FROM DiaryEvent";
+            string sq1 = "SELECT * FROM Event";
             SqlCommand commands = new SqlCommand(sq1, connection);
             SqlDataReader reader = commands.ExecuteReader();
             List<Homedata> list = new List<Homedata>();
@@ -85,11 +85,11 @@ namespace MyDiary
         {
             DateTime time = DateTime.Now;
             string ab = time.ToString("h:mm:ss tt");
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
             connection.Open();
-            string sql = "UPDATE DiaryEvent SET Diary='" + UpdaterichTextBox1.Text + "'WHERE Id=" + id;
-            string sq3 = "UPDATE DiaryEvent SET ModfiedTime='" + ab + "'WHERE Id=" + id;
-            string sq4 = "UPDATE DiaryEvent SET Event='" + textBox2.Text + "'WHERE Id=" + id;
+            string sql = "UPDATE Event SET Diary='" + UpdaterichTextBox1.Text + "'WHERE Id=" + id;
+            string sq3 = "UPDATE Event SET ModfiedTime='" + ab + "'WHERE Id=" + id;
+            string sq4 = "UPDATE Event SET Event='" + textBox2.Text + "'WHERE Id=" + id;
             SqlCommand command1 = new SqlCommand(sq3, connection);
             SqlCommand command = new SqlCommand(sql, connection);
             SqlCommand command2 = new SqlCommand(sq4, connection);
@@ -101,7 +101,7 @@ namespace MyDiary
             if (diary > 0)
             {
                 MessageBox.Show("Diary Modified");
-                string sq2 = "SELECT * FROM DiaryEvent";
+                string sq2 = "SELECT * FROM Event";
                 SqlCommand commands = new SqlCommand(sq2, connection);
                 SqlDataReader reader = commands.ExecuteReader();
                 List<Homedata> list = new List<Homedata>();
@@ -135,9 +135,9 @@ namespace MyDiary
         {
             if(DlttextBox2.Text!="")
             {
-                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
                 connection.Open();
-                string sql = "DELETE FROM DiaryEvent WHERE Id=" + Int32.Parse(DlttextBox2.Text);
+                string sql = "DELETE FROM Event WHERE Id=" + Int32.Parse(DlttextBox2.Text);
 
 
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -146,7 +146,7 @@ namespace MyDiary
                 if (diary > 0)
                 {
                     MessageBox.Show("Diary Deleted");
-                    string sq2 = "SELECT * FROM DiaryEvent";
+                    string sq2 = "SELECT * FROM Event";
                     SqlCommand commands = new SqlCommand(sq2, connection);
                     SqlDataReader reader = commands.ExecuteReader();
                     List<Homedata> list = new List<Homedata>();
@@ -191,9 +191,9 @@ namespace MyDiary
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DiaryEvent"].ConnectionString);
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
             connection.Open();
-            string sq1 = "SELECT * FROM DiaryEvent WHERE Event LIKE '"+textBox1.Text+"%'";
+            string sq1 = "SELECT * FROM Event WHERE Event LIKE '"+textBox1.Text+"%'";
             SqlCommand commands = new SqlCommand(sq1, connection);
             SqlDataReader reader = commands.ExecuteReader();
             List<Homedata> list = new List<Homedata>();

@@ -60,7 +60,7 @@ namespace MyDiary
                 user.Picture = reader["Picture"].ToString();
                 user.CreatedTime = reader["CreatedTime"].ToString();
                 user.ModfiedTime = reader["ModfiedTime"].ToString();
-
+               
                 list.Add(user);
                 
             }
@@ -116,6 +116,7 @@ namespace MyDiary
                     user.Picture = reader["Picture"].ToString();
                     user.CreatedTime = reader["CreatedTime"].ToString();
                     user.ModfiedTime = reader["ModfiedTime"].ToString();
+                   
 
                     list.Add(user);
                 }
@@ -161,6 +162,7 @@ namespace MyDiary
                         user.Picture = reader["Picture"].ToString();
                         user.CreatedTime = reader["CreatedTime"].ToString();
                         user.ModfiedTime = reader["ModfiedTime"].ToString();
+                       
 
                         list.Add(user);
                     }
@@ -210,6 +212,7 @@ namespace MyDiary
                     user.Picture = reader["Picture"].ToString();
                     user.CreatedTime = reader["CreatedTime"].ToString();
                     user.ModfiedTime = reader["ModfiedTime"].ToString();
+                   
 
                 list.Add(user);
 

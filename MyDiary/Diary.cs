@@ -101,6 +101,7 @@ namespace MyDiary
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
                 connection.Open();
                 string sq1 = "INSERT INTO Event(Event,Importance,Date,Diary,Picture,CreatedTime) VALUES('" + Eventbox.Text + "','" + ImportancecomboBox1.Text + "','" + dateTimePicker1.Text + "','" + DiaryrichTextBox1.Text + "','"+ abc + "','"+ ab+ "')";
+                
                 SqlCommand command = new SqlCommand(sq1, connection);
                 int diary = command.ExecuteNonQuery();
                 connection.Close();

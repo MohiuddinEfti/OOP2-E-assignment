@@ -140,7 +140,7 @@ namespace MyDiary
             {
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Event"].ConnectionString);
                 connection.Open();
-                string sql = "DELETE FROM Event WHERE Id=" + Int32.Parse(DlttextBox2.Text);
+                string sql = "DELETE FROM Event WHERE Id='"+ Int32.Parse(DlttextBox2.Text) + "' AND [SignUpID] = '" + id1 + "' ";
 
 
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -177,7 +177,7 @@ namespace MyDiary
                 }
                 else
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Error There No Such Event Id");
                 }
             }
             else
